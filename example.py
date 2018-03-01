@@ -12,12 +12,12 @@ pieces = ["mond_1.mid", "mond_2.mid", "mond_3.mid"]
 # exactly copying the first-order transitions
 beethoven = Markov()
 beethoven.train(fnames=pieces)
-beethoven.compose("less_random.mid", length=300, delta=400)  # 2 minutes long
+beethoven.compose("less_random.mid", length=300)
 
 # with a strongish prior bias towards randomness -- sounds worse, I think
 badhoven = Markov(priors=200)
 badhoven.train(fnames=pieces)
-beethoven.compose("more_random.mid", length=200, delta=300)  # 1 minute long
+beethoven.compose("more_random.mid", length=200)
 
 # now you can play the output files with whatever midi player you have
 # though a first-order Markov model really doesn't sound very good
